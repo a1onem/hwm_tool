@@ -1,0 +1,166 @@
+body {
+    background: linear-gradient(to right, #77778a, transparent 2%, transparent 98%, #1a1a22),
+        radial-gradient(farthest-corner at 100% 30%, #447 0%, #000 100%);
+    color: #fe0;
+    width: 310px;
+    font: 10pt Verdana;
+    margin: 0;
+    user-select: none;
+}
+
+.block {
+    margin: 2px 0;
+}
+
+#main {
+    padding: 0 10px 5px 10px;
+    overflow-x: hidden;
+}
+
+#main input[type=checkbox] {
+    margin-bottom: 4px;
+}
+
+#pageholder {
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: repeat(4, 290px);
+    gap: 10px;
+}
+
+input[type=checkbox] {
+    vertical-align: -2px;
+}
+
+input,
+button {
+    cursor: pointer;
+}
+
+button {
+    padding: 0 2px;
+}
+
+button+button,
+input+button,
+select+button {
+    margin-left: 4px;
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+option:disabled {
+    color: #ddd;
+}
+
+a {
+    color: #fd4;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo {
+    background: rgba(127, 127, 127, .5);
+    padding: 0;
+    text-align: center;
+    color: #eee;
+    font-weight: bold;
+}
+
+.field {
+    width: 136px;
+    margin-top: 2px;
+}
+
+.title {
+    margin: 0 0 4px 2px;
+    color: #aaa;
+}
+
+/*Страница помощи*/
+#help {
+    color: #eee;
+    margin: 20px;
+}
+
+/*Кнопка галереи*/
+.btn {
+    background: #444;
+    color: #ff3;
+    margin-top: 8px;
+    padding: 5px;
+}
+
+.btn:hover {
+    background: #44a;
+}
+
+.btn.selected {
+    background: #787;
+    pointer-events: none;
+}
+
+/* Панель статуса*/
+#status {
+    text-align: center;
+    margin: 5px 0;
+}
+
+#status button {
+    margin-top: 5px;
+}
+
+.invisible {
+    display: none;
+}
+
+.err {
+    color: #f66;
+}
+
+.work {
+    color: #4f4;
+}
+
+/*Панель ключа*/
+#keyblock {
+    text-align: center;
+}
+
+#key {
+    background: rgba(255, 255, 255, .2);
+    border: 1px solid #aaa;
+    color: #fff;
+}
+
+/*Расширенные настройки Отслеживания лотов*/
+#btn_ExtOpts {
+    background: url('img/gear.png');
+    width: 18px;
+    border: none;
+    vertical-align: -5px;
+}
+
+#btn_ExtOpts:disabled {
+    opacity: 0.5;
+}
+
+#ExtOpts {
+    color: #0ee;
+}
+
+#extOpts input,
+#extOpts select {
+    margin: 8px 8px 0 4px;
+}
+
+.bm_btn {
+    width: 73px;
+}

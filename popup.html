@@ -1,0 +1,152 @@
+<html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="popup.css" />
+
+<body>
+    <div id="logo" class="logo">HWM Tool</div>
+    <div id='main'>
+        <button id="btn_gallery" class="btn">Галерея артефактов и существ</button><button id="btn_page1"
+            class="btn selected">1</button><button id="btn_page2" class="btn">2</button><button id="btn_help"
+            class="btn" title="Помощь">?</button>
+
+        <div id="pageholder">
+
+            <fieldset id="page1">
+
+                <div class="block">
+                    <div class="title">Показывать разделы игры:</div>
+                    <input id="tavern" type="checkbox">Таверна&nbsp;<input id="rulette"
+                        type="checkbox">Рулетка&nbsp;<input id="chat" type="checkbox">Чат
+                </div>
+
+                <div class="block">
+                    <div class="title">Групповые бои и Дуэли:</div>
+                    <input id="informator" type="checkbox">Информатор&nbsp;
+                    <input type="color" value="#8000ff" id="color">
+                    <br>
+                    <input id="battlealert" type="checkbox">Напоминать о заявке&nbsp;<input id="sound" type="checkbox">+
+                    звук
+                </div>
+
+                <div class="block">
+                    <div class="title">Рынок и Магазин:</div>
+                    <input id="tradehelp" type="checkbox">Отслеживание лотов&nbsp;&nbsp;<select id="tradetime">
+                        <option value=1 disabled>1 мин.</option>
+                        <option value=5>5 мин.</option>
+                        <option value=15>15 мин.</option>
+                        <option value=30>30 мин.</option>
+                        <option value=60>60 мин.</option>
+                    </select>&nbsp;<input title="Дополнительные настройки" type="button" id="btn_ExtOpts">
+                </div>
+
+                <div class="block">
+                    <div class="title">Инвентарь:</div>
+                    <input id="aucbtns" type="checkbox">Кнопки быстрого поиска и продажи
+                    <br>
+                    <input id="ifilters" type="checkbox">Фильтры инвентаря
+                    <br>
+                    <input id="smartbg" type="checkbox">Умный фон артефактов
+                    <br>
+                    <input id="mtrans" type="checkbox">Мультипередача артефактов
+                </div>
+
+                <div class="block">
+                    <div class="title">Разные опции:</div>
+                    <input id="htimer" type="checkbox">Таймер восстановления
+                    <br>
+                    <input id="ttimer" type="checkbox">Таймер перемещения
+                    <br>
+                    <input id="fasttravel" type="checkbox">Ссылки быстрого перемещения
+                    <br>
+                    <input id="protocol" type="checkbox">Парсер протокола передач
+                </div>
+
+                <div class="block">
+                    <div class="title">Мастер билдов:</div>
+                    <fieldset id="buildmaster">
+                        <select title="Текущий билд" id="build_sel" class="field"></select><button id="btn_load"
+                            class="bm_btn">Загрузить</button><button id="btn_del" class="bm_btn">Удалить</button>
+                        <input title="Введите краткое название билда (до 15 символов)" id="build_name" class="field"
+                            type="text" placeholder="название билда" maxlength="15"><button id="btn_save"
+                            class="bm_btn">Сохранить</button>
+                    </fieldset>
+                    <div id="status" class="invisible"><span id="message"></span><br>
+                        <button id="btn_yes">Да</button><button id="btn_no">Нет</button>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset id="page2">
+                <div class="block">
+                    <div class="title">Гильдии:</div>
+                    <input id="gtimers" type="checkbox">Таймеры гильдий
+                    <br>
+                    <span class="title">Позиция&nbsp;&nbsp;</span><select id="gtpos">
+                        <option value="top-left">1</option>
+                        <option value="top-right">2</option>
+                        <option value="bottom-left">3</option>
+                        <option value="bottom">4</option>
+                        <option value="bottom-right">5</option>
+                    </select>&nbsp;
+                    <span class="title">Стиль&nbsp;&nbsp;</span><select id="gtstyle">
+                        <option value="dark">Тёмный</option>
+                        <option value="light">Светлый</option>
+                    </select>
+                </div>
+
+                <div class="block">
+                    <div class="title">Получать уведомления:</div>
+                    <input id="goAlert" type="checkbox">ГО<input id="gnAlert" type="checkbox">ГН<input id="glAlert"
+                        type="checkbox">ГЛ<input id="gvAlert" type="checkbox">ГВ<input id="jobseek" type="checkbox">ГР
+                    (автопоиск)
+                </div>
+
+                <div class="block">
+                    <input id="cbx_gnBot" type="checkbox">Автомаршруты в ГН
+                </div>
+
+                <div class="block">
+                    <br>
+                    <div class="title">Работа с файлом настроек:</div>
+                    <button id="btn_export" class="bm_btn">Экспорт</button><button id="btn_import"
+                        class="bm_btn">Импорт</button>
+                </div>
+            </fieldset>
+
+            <fieldset id="ExtOpts">
+                <div class="block">
+                    <div class="title">Дополнительные настройки</div>
+                    <input id="ext_marketfilter" type="checkbox">Сравнивать цены лотов с параметром "Только продажа" в
+                    Магазине<br>
+                    <input id="ext_sort" type="checkbox">Сортировка Рынка по умолчанию
+                    <select id="ext_sorttype">
+                        <option value="1">Время: Завершающиеся</option>
+                        <option value="2">Время: Новые предложения</option>
+                        <option value="3">Цена: По убыванию</option>
+                        <option value="4">Цена: По возрастанию</option>
+                        <option value="104">Цена боя: По убыванию</option>
+                        <option value="204">Цена боя: По возрастанию</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset id="help">
+                <p><a target=_blank href='https://sites.google.com/view/hwmtool/about'>Подробно о расширении</a></p>
+                <p><a target=_blank href='https://sites.google.com/view/hwmtool/changelog'>История обновлений</a></p>
+                <p><a target=_blank href='https://groups.google.com/g/hwmtool'>Форум</a></p>
+                <p><a target=_blank href='https://www.youtube.com/@hwmtool'>Канал на Youtube</a>
+                </p>
+                <br>
+                <p align=center>A1oneM's HWM Tool <span style='color:springgreen'>[2018-2023]</span></p>
+                <div id="keyblock">
+                    <div class="title">Ключ активации:</div>
+                    <input id="key" class="field" type="text"><button id='sendkey'>Применить</button>
+                    <div id="keyerror" class="err"></div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>

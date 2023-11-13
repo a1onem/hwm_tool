@@ -1,0 +1,57 @@
+#m_div {
+    display: none;
+}
+
+.main {
+    width: 80%;
+    font-size: 14px;
+    display: grid;
+}
+
+.menu {
+    margin: 15px;
+}
+
+.icon {
+    display: inline-table;
+}
+
+.m_icon {
+    border: 1px solid black;
+    background-image: linear-gradient(white, grey);
+}
+
+.icon:hover {
+    box-shadow: 0 0 8px rgba(0,0,0,0.7);
+}
+
+.pages {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.pages a {
+    margin: 2px;
+    color: #000;
+    text-decoration: none;
+    padding: 2px 7px 2px 7px;
+    border-radius: 2px;
+    font-size: 16px;
+}
+
+.art_info {
+    position: absolute;
+    background: rgba(255,255,255,.94);
+    width: 260px;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px;
+}
+
+.art_info p {
+    margin: 0 0 5px 0;
+}
+
+.art_info a:hover {
+    text-decoration: none;
+}

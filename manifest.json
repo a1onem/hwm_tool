@@ -1,0 +1,77 @@
+{
+    "manifest_version": 2,
+    "name": "HWM Tool",
+    "version": "1.7.84",
+    "author": "A1oneM",
+    "description": "Кастомизация интерфейса и расширение функций в онлайн-игре",
+    "icons": {
+        "128": "img/icon_128.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.heroeswm.ru/*",
+                "*://my.lordswm.com/*"
+            ],
+            "exclude_matches": [
+                "*://*/frames*",
+                "*://*/chat*",
+                "*://*/reg*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "css": [
+                "content.css"
+            ],
+            "all_frames": true
+        },
+        {
+            "matches": [
+                "*://*.heroeswm.ru/*",
+                "*://my.lordswm.com/*"
+            ],
+            "exclude_matches": [
+                "*://*/frames*",
+                "*://*/chat*",
+                "*://*/reg*"
+            ],
+            "run_at": "document_start",
+            "js": [
+                "preload.js"
+            ],
+            "all_frames": true
+        },
+        {
+            "matches": [
+                "*://*.heroeswm.ru/photo_pl_albums.php",
+                "*://my.lordswm.com/photo_pl_albums.php"
+            ],
+            "js": [
+                "gallery.js"
+            ],
+            "css": [
+                "gallery.css"
+            ],
+            "all_frames": true
+        }        
+    ],
+    "background": {
+        "scripts": [
+            "bg.js"
+        ]
+    },
+    "browser_action": {
+        "default_icon": "img/icon.png",
+        "default_popup": "popup.html",
+        "default_title": ""
+    },
+    "permissions": [
+        "storage",
+        "notifications",
+        "*://cfcdn.lordswm.com/*"
+    ],
+    "web_accessible_resources": [
+        "img/*"
+    ]
+}
